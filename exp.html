@@ -20,11 +20,11 @@
 <body></body>
 <script>
     /* initialize jsPsych */
-    var jsPsych = initJsPsych();
+    var jsPsych = initJsPsych();            
 
-    const subject_id = jsPsych.randomization.randomID(10);
-              const filename = `${subject_id}.csv`;
-            
+/* Generate a unique subject ID and filename */
+const subject_id = jsPsych.randomization.randomID(10);
+const filename = `${subject_id}.csv`;
 
 /* Initial Global Question */
     const startGlobalQuestion = {
@@ -4744,18 +4744,21 @@ var condition;
     jsPsych.data.addProperties({
         condition: condition
     });
-    
+
+// Save data at the end of the experiment
+const save_data = {
+    type: jsPsychPipe,
+    action: "save",
+    experiment_id: "VhO0m8MNHp9p",
+    filename: filename,
+    data_string: () => jsPsych.data.get().csv()
+};
+
+// Add save_data to the timeline so it runs at the end
+selectedTimeline.push(save_data);
+
 // Run the selected timeline
     jsPsych.run(selectedTimeline);
-
-// Save data to datapipe
-    const save_data = {
-                    type: jsPsychPipe,
-                    action: "save",
-                    experiment_id: "VhO0m8MNHp9p",
-                    filename: filename,
-                    data_string: ()=>jsPsych.data.get().csv()
-                };
 
 </script>
 
