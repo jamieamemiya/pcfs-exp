@@ -26,6 +26,122 @@
 const subject_id = jsPsych.randomization.randomID(10);
 const filename = `${subject_id}.csv`;
 
+/* Consent Form */
+var consentForm = {
+  type: jsPsychHtmlButtonResponse,
+  stimulus: `
+    <div style="text-align: left; max-width: 800px; margin: auto;">
+      <h2>OCCIDENTAL COLLEGE</h2>
+      <h3>INFORMED CONSENT FORM: ONLINE ADULT PARTICIPANTS</h3>
+      <h4>Title of Study: Thinking about Trends in Society</h4>
+      <h4>Principal Investigator: Dr. Jamie Amemiya</h4>
+      
+      <p>
+        You are invited to participate in a research study conducted by Dr. Jamie Amemiya, 
+        a faculty member in the Department of Psychology at Occidental College in Los Angeles, CA. 
+        You must be at least <strong>18 years of age</strong> to consent to participation in this study. 
+        Please read this form and ask any questions you may have before agreeing to participate in the study.
+      </p>
+
+      <h4>PURPOSE OF STUDY</h4>
+      <p>
+        The purpose of this study is to examine how adults think about different societal trends, 
+        for example economic trends. You will be shown data on trends over time and asked about your 
+        opinions, knowledge, and overall evaluations of these trends. Your responses will be compared 
+        with other adults to understand how thinking about societal trends differs by factors such as 
+        political affiliation. 
+      </p>
+      <p>
+        De-identified data collected from this study will be used for academic publication, academic 
+        conferences, educational presentations, and may be posted publicly on data storage platforms 
+        such as Open Science Framework and GitHub. Data derived from this study may be held for future 
+        use, stored and re-analyzed, or combined with other data at a later date.
+      </p>
+
+      <h4>PROCEDURES</h4>
+      <p>
+        If you agree to be in this study, you will be asked a series of questions about societal patterns, 
+        such as economic trends. You are free to skip any questions you would like. We wish to emphasize 
+        that there are no right or wrong answers and that we appreciate your honest responses. 
+      </p>
+      <p>
+        We may collect basic demographic information, including your age, gender, political affiliation, 
+        and racial-ethnic background. Participation should take about <strong>15 minutes</strong>. 
+        This study may contain attention checks to ensure that participants are finishing the tasks 
+        honestly and completely. As long as you read the instructions and complete the tasks, your 
+        response will be approved.
+      </p>
+
+      <h4>VOLUNTARY PARTICIPATION</h4>
+      <p>
+        Participation in this study is <strong>voluntary</strong>. You may skip any questions that you 
+        do not want to answer or stop participating at any time. You are free to withdraw from the study 
+        at any time without penalty, with no loss of benefits to which you were otherwise entitled.
+      </p>
+
+      <h4>RISKS AND BENEFITS</h4>
+      <p>
+        There are no anticipated risks or discomforts to your participation in this study other than 
+        those encountered in daily life. Although you will receive no direct benefits for participation 
+        in this study, it may make you more aware of how knowledge is discovered in psychology and help 
+        the investigator better understand how people think about societal patterns, like economic trends.
+      </p>
+
+      <h4>CONFIDENTIALITY</h4>
+      <p>
+        <strong>[Prolific/MTurk only]</strong>: Your Prolific/MTurk ID will be used to distribute 
+        payment to you but will not be stored with the research data we collect from you. Please be aware 
+        that your Prolific/MTurk ID can potentially be linked to information about you on your Prolific 
+        public profile page, depending on the settings you have for your profile. We will not be accessing 
+        any personally identifying information about you that you may have put on your public profile page.
+      </p>
+      <p>
+        Confidentiality of your research records will be strictly maintained by de-identifying the stored 
+        data and electronically deleting identifying information. The de-identified data from the study 
+        will be kept at least until <strong>3 years after publication</strong>. Identifiable data will never 
+        be shared outside the research team.
+      </p>
+
+      <h4>COMPENSATION</h4>
+      <p>
+        <strong>[Prolific/MTurk]</strong>: You will be compensated at a rate of <strong>$8.00/hour</strong>.
+      </p>
+
+      <h4>CONTACT INFORMATION</h4>
+      <p>
+        If you have any questions or concerns about the research, you can contact Dr. Jamie Amemiya at 
+        <a href="mailto:amemiya@oxy.edu">amemiya@oxy.edu</a>.
+      </p>
+      <p>
+        If you have any questions or concerns regarding your rights as a subject in this study, you may 
+        contact the Institutional Review Board Office at Occidental College in Los Angeles, CA, 90041 at 
+        <a href="mailto:hsrrc@oxy.edu">hsrrc@oxy.edu</a>.
+      </p>
+
+      <h4>CONSENT STATEMENT</h4>
+      <p>
+        I am at least <strong>eighteen years of age</strong>. I have read this form and the research 
+        study has been explained to me. I am fully aware of the nature and extent of my participation in 
+        this research project and the possible risks as outlined above. I understand that I may withdraw 
+        my participation in this project at any time without prejudice or penalty of any kind.
+      </p>
+      <p>
+        I hereby agree to participate in this research project.
+      </p>
+      <p>
+        <strong>Please print or save a copy of this page for your records.</strong>
+      </p>
+    </div>
+  `,
+  choices: ["I Agree", "I Do Not Agree"],
+  on_finish: function(data) {
+    if (data.response == 1) { // If "I Do Not Agree" is chosen
+      jsPsych.endExperiment("You have chosen not to participate. Thank you.");
+    }
+  }
+};
+
+
 /* Initial Global Question */
     const startGlobalQuestion = {
         type: jsPsychSurvey,
@@ -35,7 +151,7 @@ const filename = `${subject_id}.csv`;
                 [
                     {
                         type: 'radiogroup',
-                        title: "TEST-Which political party do you believe is better for the economy overall?",
+                        title: "Which political party do you believe is better for the economy overall?",
                         name: 'econparty1',
                         isRequired: false,
                         choices: [
@@ -4705,6 +4821,7 @@ shuffledCond1Array.forEach(function (chunk) {
 });
 // timeline 
 var cond1_timeline = [];
+cond1_timeline.push(consentForm);
 cond1_timeline.push(startGlobalQuestion);
 cond1_timeline = cond1_timeline.concat(flattenedCond1Array); // Add all shuffled trials
 cond1_timeline.push(endGlobalQuestion);
@@ -4722,6 +4839,7 @@ shuffledCond2Array.forEach(function (chunk) {
 });
 // timeline 
 var cond2_timeline = [];
+cond2_timeline.push(consentForm);
 cond2_timeline.push(startGlobalQuestion);
 cond2_timeline = cond2_timeline.concat(flattenedCond2Array); // Add all shuffled trials
 cond2_timeline.push(endGlobalQuestion);
