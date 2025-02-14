@@ -19,12 +19,27 @@
 
 <body></body>
 <script>
-    /* initialize jsPsych */
-    var jsPsych = initJsPsych();            
+/* initialize jsPsych */
+var jsPsych = initJsPsych({
+on_finish: function(){
+window.location = "https://app.prolific.com/submissions/complete?cc=CXEW329B"
+}
+});
+
+// capture info from Prolific
+var subject_id = jsPsych.data.getURLVariable('PROLIFIC_PID');
+var study_id = jsPsych.data.getURLVariable('STUDY_ID');
+var session_id = jsPsych.data.getURLVariable('SESSION_ID');
+
+jsPsych.data.addProperties({
+subject_id: subject_id,
+study_id: study_id,
+session_id: session_id
+});
 
 /* Generate a unique subject ID and filename */
-const subject_id = jsPsych.randomization.randomID(10);
-const filename = `${subject_id}.csv`;
+const generated_subject_id = jsPsych.randomization.randomID(10);
+const filename = `${generated_subject_id}.csv`;
 
 /* Consent Form */
 var consentForm = {
@@ -4876,6 +4891,8 @@ selectedTimeline.push(save_data);
 
 // Run the selected timeline
     jsPsych.run(selectedTimeline);
+
+    
 
 </script>
 
