@@ -4558,12 +4558,36 @@ var consentForm = {
         }
     }
 
-    /* Demographic questionnaire */
+    /* Pilot Questions & Demographic questionnaire */
     const endquestionnaire = {
         type: jsPsychSurvey,
         survey_json: {
             elements:
                 [
+                    {
+                        type: 'text',
+                        title: "To the best of your knowledge, what is the average price of eggs currently in the U.S.?",
+                        name: 'eggs_pred',
+                        isRequired: false,
+                    },
+                    {
+                        type: 'text',
+                        title: "Imagine instead that Kamala Harris had won the 2024 presidential election. What would the average price of eggs be currently in the U.S.?",
+                        name: 'eggs_cf',
+                        isRequired: false,
+                    },
+                    {
+                        type: 'text',
+                        title: "To the best of your knowledge, how many U.S. air carrier plane crashes have there been thus far in 2025?",
+                        name: 'plane_pred',
+                        isRequired: false,
+                    },
+                    {
+                        type: 'text',
+                        title: "Imagine instead that Kamala Harris had won the 2024 presidential election. How many U.S. air carrier plane crashes would there have been thus far in 2025?",
+                        name: 'plane_cf',
+                        isRequired: false,
+                    },                                               
                     {
                         type: 'text',
                         title: "What is your age (in years)?",
@@ -4572,7 +4596,7 @@ var consentForm = {
                     },
                     {
                         type: 'text',
-                        title: "What gender do you identify as?",
+                        title: "What is your gender?",
                         name: 'gender',
                         isRequired: false,
                     },
@@ -4599,6 +4623,12 @@ var consentForm = {
                         ]
                     },
                     {
+                        type: 'text',
+                        title: "What is the gross income of your household?",
+                        name: 'income',
+                        isRequired: false,
+                    },
+                    {
                         type: 'radiogroup',
                         title: "What is your political orientation?",
                         name: 'polorientation',
@@ -4616,7 +4646,7 @@ var consentForm = {
                     },
                     {
                         type: 'radiogroup',
-                        title: "What is your political party affiliation",
+                        title: "What is your political party affiliation?",
                         name: 'polpartyaff',
                         isRequired: false,
                         showOtherItem: true,
@@ -4658,7 +4688,11 @@ var consentForm = {
                 }
                 return true;
             };
-            if (!checkResponses('age') ||
+            if (!checkResponses('eggs_pred') ||
+                !checkResponses('eggs_cf') ||
+                !checkResponses('plane_pred') ||
+                !checkResponses('plane_cf') ||
+                !checkResponses('age') ||
                 !checkResponses('gender') ||
                 !checkResponses('race') ||
                 !checkResponses('edu') ||
@@ -4675,7 +4709,7 @@ var consentForm = {
     const end = {
         type: jsPsychHtmlButtonResponse,
         stimulus: `<div style="width:1000px;">
-             <p>You've reached the end of the survey. Thank you for participating in our research!</p>
+             <p>You've reached the end of the survey and will be redirected back to Prolific. Thank you for participating in our research!</p>
          `,
         choices: ["End"]
     };
@@ -4882,7 +4916,7 @@ const save_data = {
     data_string: () => jsPsych.data.get().csv(),
     on_finish: function() {
         // Redirect to Prolific AFTER saving data
-        window.location.href = "https://app.prolific.com/submissions/complete?cc=CXEW329B";
+        window.location.href = "https://app.prolific.com/submissions/complete?cc=C1KY2KUR";
     }
 };
 
