@@ -165,14 +165,14 @@ var consentForm = {
                         name: 'econparty1',
                         isRequired: false,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
-                        ]
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
+                       ]
                     },
                 ]
             },
@@ -201,15 +201,16 @@ var consentForm = {
                     {
                         type: 'radiogroup',
                         title: "The S&P 500 is a list of the 500 biggest U.S. companies, showing how well the stock market is doing overall—HIGHER IS BETTER because it means companies are doing well, which can help the economy grow. Which political party do you believe is BETTER for the S&P 500 overall?",
+                        name: 'SP500party1',
                         isRequired: true,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -1027,17 +1028,17 @@ var consentForm = {
                 [
                     {
                         type: 'radiogroup',
-                        title: "Now that you've seen the data, which political party do you believe is better for the S&P 500 overall?",
+                        title: "Which political party do you believe is better for the S&P 500 overall?",
                         name: 'SP500party2',
                         isRequired: false,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -1067,15 +1068,16 @@ var consentForm = {
                     {
                         type: 'radiogroup',
                         title: "The debt-to-GDP ratio compares how much money the government owes to the total value of everything the country produces in a year—LOWER IS BETTER because it shows the government owes less compared to what the country makes. Which political party do you believe is BETTER for debt-to-GDP ratios overall?",
+                        name: 'debtparty1',
                         isRequired: true,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -1893,17 +1895,17 @@ var consentForm = {
                 [
                     {
                         type: 'radiogroup',
-                        title: "Now that you've seen the data, which political party do you believe is better for debt to GDP ratios overall?",
+                        title: "Which political party do you believe is better for debt to GDP ratios overall?",
                         name: 'debtparty2',
                         isRequired: false,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -1933,15 +1935,16 @@ var consentForm = {
                     {
                         type: 'radiogroup',
                         title: "Unemployment is the percentage of people who don't have a job but are actively looking for one—LOWER IS BETTER because it means more people are working and earning money. Which political party do you believe is BETTER for unemployment rates overall?",
+                        name: 'unemploymentparty1',
                         isRequired: true,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -2759,17 +2762,17 @@ var consentForm = {
                 [
                     {
                         type: 'radiogroup',
-                        title: "Now that you've seen the data, which political party do you believe is better for unemployment rates overall?",
+                        title: "Which political party do you believe is better for unemployment rates overall?",
                         name: 'unemploymentparty2',
                         isRequired: false,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -2799,15 +2802,16 @@ var consentForm = {
                     {
                         type: 'radiogroup',
                         title: "The inflation rate measures how much the prices of things people buy, like food and gas, go up over time—LOWER IS BETTER because stable prices make it easier for people to afford things. Which political party do you believe is BETTER for inflation rates overall?",
+                        name: 'inflationparty1',
                         isRequired: true,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -3625,17 +3629,17 @@ var consentForm = {
                 [
                     {
                         type: 'radiogroup',
-                        title: "Now that you've seen the data, which political party do you believe is better for inflation rates overall?",
+                        title: "Which political party do you believe is better for inflation rates overall?",
                         name: 'inflationparty2',
                         isRequired: false,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -3665,15 +3669,16 @@ var consentForm = {
                     {
                         type: 'radiogroup',
                         title: "Labor force participation shows what percentage of adults are either working or looking for work—HIGHER IS BETTER because it means more people are contributing to the economy. Which political party do you believe is BETTER for labor force participation rates overall?",
+                        name: 'laborparty1',
                         isRequired: true,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -4493,17 +4498,17 @@ var consentForm = {
                 [
                     {
                         type: 'radiogroup',
-                        title: "Now that you've seen the data, which political party do you believe is better for labor participation rates overall?",
+                        title: "Which political party do you believe is better for labor participation rates overall?",
                         name: 'laborparty2',
                         isRequired: false,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -4530,17 +4535,17 @@ var consentForm = {
                 [
                     {
                         type: 'radiogroup',
-                        title: "Now that you've seen the data, which political party do you believe is better for the economy overall?",
+                        title: "Which political party do you believe is better for the economy overall?",
                         name: 'econparty2',
                         isRequired: false,
                         choices: [
-                            'Strongly believe Republican',
-                            'Moderately believe Republican',
-                            'Slightly believe Republican',
-                            'Neutral, no opinion',
-                            'Slightly believe Democrat',
+                            'Strongly believe Democrat',
                             'Moderately believe Democrat',
-                            'Strongly believe Democrat'
+                            'Slightly believe Democrat',
+                            'Neutral, no opinion',
+                            'Slightly believe Republican',
+                            'Moderately believe Republican',
+                            'Strongly believe Republican'
                         ]
                     },
                 ]
@@ -4714,9 +4719,9 @@ var consentForm = {
         choices: ["End"]
     };
 
+
 // Prediction Labor
     var PredictLabor = [];
-    PredictLabor.push(startLaborQuestion);
     PredictLabor.push(instructionsPredictLabor);
     PredictLabor.push(carterPredictLabor);
     PredictLabor.push(reaganPredictLabor);
@@ -4730,7 +4735,6 @@ var consentForm = {
     PredictLabor.push(endLaborQuestion);
 // Counterfactual Labor
 var CounterLabor = [];
-    CounterLabor.push(startLaborQuestion);
     CounterLabor.push(instructionsCounterLabor);
     CounterLabor.push(carterCounterLabor);
     CounterLabor.push(reaganCounterLabor);
@@ -4744,7 +4748,6 @@ var CounterLabor = [];
 
 // Prediction Unemployment
 var PredictUnemployment = [];
-    PredictUnemployment.push(startUnemploymentQuestion);
     PredictUnemployment.push(instructionsPredictUnemployment);
     PredictUnemployment.push(carterPredictUnemployment);
     PredictUnemployment.push(reaganPredictUnemployment);
@@ -4758,7 +4761,6 @@ var PredictUnemployment = [];
     PredictUnemployment.push(endUnemploymentQuestion);
 // Counterfactual Unemployment
 var CounterUnemployment = [];
-    CounterUnemployment.push(startUnemploymentQuestion);
     CounterUnemployment.push(instructionsCounterUnemployment);
     CounterUnemployment.push(carterCounterUnemployment);
     CounterUnemployment.push(reaganCounterUnemployment);
@@ -4772,7 +4774,6 @@ var CounterUnemployment = [];
 
 // Prediction Inflation
 var PredictInflation = [];
-    PredictInflation.push(startInflationQuestion);
     PredictInflation.push(instructionsPredictInflation);
     PredictInflation.push(carterPredictInflation);
     PredictInflation.push(reaganPredictInflation);
@@ -4786,7 +4787,6 @@ var PredictInflation = [];
     PredictInflation.push(endInflationQuestion);
 // Counterfactual Inflation
 var CounterInflation = [];
-    CounterInflation.push(startInflationQuestion);
     CounterInflation.push(instructionsCounterInflation);
     CounterInflation.push(carterCounterInflation);
     CounterInflation.push(reaganCounterInflation);
@@ -4800,7 +4800,6 @@ var CounterInflation = [];
 
 // Prediction Debt to GDP
 var PredictDebt = [];
-    PredictDebt.push(startDebtQuestion);
     PredictDebt.push(instructionsPredictDebt);
     PredictDebt.push(carterPredictDebt);
     PredictDebt.push(reaganPredictDebt);
@@ -4814,7 +4813,6 @@ var PredictDebt = [];
     PredictDebt.push(endDebtQuestion);
 // Counterfactual Debt to GDP
 var CounterDebt = [];
-    CounterDebt.push(startDebtQuestion);
     CounterDebt.push(instructionsCounterDebt);
     CounterDebt.push(carterCounterDebt);
     CounterDebt.push(reaganCounterDebt);
@@ -4828,7 +4826,6 @@ var CounterDebt = [];
 
 // Prediction S&P 500
 var PredictSP500 = [];
-    PredictSP500.push(startSP500Question);
     PredictSP500.push(instructionsPredictSP500);
     PredictSP500.push(carterPredictSP500);
     PredictSP500.push(reaganPredictSP500);
@@ -4842,7 +4839,6 @@ var PredictSP500 = [];
     PredictSP500.push(endSP500Question);
 // Counterfactual S&P 500
 var CounterSP500 = [];
-    CounterSP500.push(startSP500Question);
     CounterSP500.push(instructionsCounterSP500);
     CounterSP500.push(carterCounterSP500);
     CounterSP500.push(reaganCounterSP500);
@@ -4854,7 +4850,13 @@ var CounterSP500 = [];
     CounterSP500.push(bidenCounterSP500);
     CounterSP500.push(endSP500Question);
 
-/* create 1. Prediction condition timeline*/
+
+/* randomize initial judgment questions */
+
+var shuffledInitialJudgments = jsPsych.randomization.shuffle([startLaborQuestion, startUnemploymentQuestion, startInflationQuestion, startDebtQuestion, startSP500Question]);
+
+
+/* Create 1. Prediction condition timeline*/
 
 // Shuffle and flatten the "Counter..." chunks 
 var shuffledCond1Array = jsPsych.randomization.shuffle([PredictDebt, PredictInflation, PredictLabor, PredictSP500, PredictUnemployment]);
@@ -4867,6 +4869,7 @@ shuffledCond1Array.forEach(function (chunk) {
 var cond1_timeline = [];
 cond1_timeline.push(consentForm);
 cond1_timeline.push(startGlobalQuestion);
+cond1_timeline = cond1_timeline.concat(shuffledInitialJudgments); // Add all initial judgment questions
 cond1_timeline = cond1_timeline.concat(flattenedCond1Array); // Add all shuffled trials
 cond1_timeline.push(endGlobalQuestion);
 cond1_timeline.push(endquestionnaire);
@@ -4885,6 +4888,7 @@ shuffledCond2Array.forEach(function (chunk) {
 var cond2_timeline = [];
 cond2_timeline.push(consentForm);
 cond2_timeline.push(startGlobalQuestion);
+cond2_timeline = cond2_timeline.concat(shuffledInitialJudgments); // Add all initial judgment questions
 cond2_timeline = cond2_timeline.concat(flattenedCond2Array); // Add all shuffled trials
 cond2_timeline.push(endGlobalQuestion);
 cond2_timeline.push(endquestionnaire);
