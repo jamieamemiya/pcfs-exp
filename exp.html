@@ -4895,16 +4895,22 @@ cond2_timeline.push(endquestionnaire);
 cond2_timeline.push(end);
 
 
+// Directly assign cond1_timeline (prediction) to everyone
+var selectedTimeline = cond1_timeline;
+
+// Define the condition
+var condition = "prediction";
+
 // Randomly select one of the 2 conditions
-var selectedTimeline = jsPsych.randomization.sampleWithoutReplacement([cond1_timeline, cond2_timeline], 1)[0];
+// var selectedTimeline = jsPsych.randomization.sampleWithoutReplacement([cond1_timeline, cond2_timeline], 1)[0];
 
 // Define the conditions
-var condition;
-    if (selectedTimeline === cond1_timeline) {
-        condition = "prediction";
-    } else if (selectedTimeline === cond2_timeline) {
-        condition = "counterfactual"
-    }
+//var condition;
+//    if (selectedTimeline === cond1_timeline) {
+//        condition = "prediction";
+//    } else if (selectedTimeline === cond2_timeline) {
+//        condition = "counterfactual"
+//    }
 
 // Store the condition in jsPsych's data
     jsPsych.data.addProperties({
